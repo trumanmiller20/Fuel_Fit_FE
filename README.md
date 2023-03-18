@@ -1,6 +1,6 @@
-# **TruFIT**
+# **FUEL FIT**
 
-![Image](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQyqTZ1fP-hT9VbZOQ5PW6Zkbc49C5Lo6hnsg&usqp=CAU)
+![Image](https://wellspring.edu/wp-content/uploads/2020/09/fitness-nutrition-hero-opt.jpg)
 
 ## **_Table of Contents:_**
 
