@@ -1,11 +1,10 @@
-import NavBar from '../components/NavBar'
+import TopBar from '../components/TopBar'
+import SideBar from '../components/SideBar'
 
 const Dashboard = () => {
   return (
     <div>
-      <nav>
-        <NavBar />
-      </nav>
+      <TopBar />
     </div>
   )
 }
