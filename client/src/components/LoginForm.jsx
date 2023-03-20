@@ -47,7 +47,7 @@ const LoginForm = ( { setUser, setProfile }) => {
               className="element-input"
               onChange={handleChange}
               name="password"
-              type="text"
+              type="password"
               value={formValues.password}
               required
             />
@@ -56,7 +56,7 @@ const LoginForm = ( { setUser, setProfile }) => {
             <button
               className="login-btn"
               disabled={
-                !formValues.email || !formValues.password 
+                !formValues.email && !formValues.password 
               }
             >
               Sign In

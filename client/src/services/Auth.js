@@ -12,7 +12,7 @@ export const SignInUser = async (data) => {
 
 export const RegisterUser = async (data) => {
   try {
-    const res = await Patient.post('/api/user/register', data)
+    const res = await User.post('/api/user/register', data)
     return res.data
   } catch (error) {
     throw error

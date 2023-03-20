@@ -1,8 +1,21 @@
 import './App.css'
 import { useState, useEffect } from 'react'
 import NavBar from './components/NavBar'
+import About from './pages/About'
+import Calculate from './pages/Calculate'
+import Dashboard from './pages/Dashboard'
+import FAQ from './pages/FAQ'
+import FoodDetails from './pages/FoodDetails'
+import Grocery from './pages/Grocery'
+import LoginPage from './pages/LoginPage'
+import Recipe from './pages/Recipe'
+import RecipeDetails from './pages/RecipeDetails'
+import axios from 'axios'
+import { BASE_URL } from './services/api'
+import { useNavigate } from 'react-router-dom'
+import { Route, Routes } from 'react-router-dom'
 
-function App() {
+const App = () => {
   const [user, setUser] = useState(null)
   return (
     <div className="App">

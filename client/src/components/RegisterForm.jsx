@@ -99,7 +99,7 @@ const RegisterForm = ({ setProfile }) => {
               className="element-input"
               onChange={handleChange}
               name="password"
-              type="text"
+              type="password"
               value={formValues.password}
               required
             />
@@ -112,7 +112,7 @@ const RegisterForm = ({ setProfile }) => {
               className="element-input"
               onChange={handleChange}
               name="confirmPassword"
-              type="text"
+              type="password"
               placeholder="Passwords must match"
               value={formValues.confirmPassword}
               required
@@ -122,9 +122,7 @@ const RegisterForm = ({ setProfile }) => {
             <button
               className="register-btn"
               disabled={
-                !formValues.email ||
-                (!formValues.password &&
-                  formValues.confirmPassword === formValues.password)
+                !formValues.email || !formValues.firstName || !formValues.lastName || !formValues.username || !formValues.password || !formValues.confirmPassword || (formValues.password !== formValues.confirmPassword)
               }
             >
               Register Account
