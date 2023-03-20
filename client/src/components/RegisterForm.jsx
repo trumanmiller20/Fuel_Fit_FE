@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { RegisterUser } from '../services/Auth'
 
-const RegisterForm = ({ hasProfile, setProfile }) => {
+const RegisterForm = ({ setProfile }) => {
 
   let initialState = {
     firstName: '',

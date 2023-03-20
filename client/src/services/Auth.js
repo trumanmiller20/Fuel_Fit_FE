@@ -10,7 +10,7 @@ export const SignInUser = async (data) => {
   }
 }
 
-export const RegisterPatient = async (data) => {
+export const RegisterUser = async (data) => {
   try {
     const res = await Patient.post('/api/user/register', data)
     return res.data

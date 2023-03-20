@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react'
 import NavBar from './components/NavBar'
 
 function App() {
+  const [user, setUser] = useState(null)
   return (
     <div className="App">
       <Routes>
@@ -12,7 +13,7 @@ function App() {
         <Route path="/faq" element={<FAQ />}></Route>
         <Route path="/food-details/:food_id" element={<FoodDetails />}></Route>
         <Route path="/grocery" element={<Grocery />}></Route>
-        <Route path="/" element={<LoginPage />}></Route>
+        <Route path="/" element={<LoginPage setUser={setUser} />}></Route>
         <Route path="/recipe" element={<Recipe />}></Route>
         <Route
           path="/recipe-details/:recipe_id"
