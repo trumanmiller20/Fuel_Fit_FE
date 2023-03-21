@@ -1,10 +1,11 @@
 import SideBar from '../components/SideBar'
 
-const Dashboard = () => {
+const Profile = () => {
   return (
-    <div className="dashboard">
+    <div className="profile">
       <SideBar />
     </div>
   )
 }
-export default Dashboard
+
+export default Profile
