@@ -119,3 +119,82 @@ body {
 .faq-accordion {
   color: black;
 }
+
+.recipe {
+  display: flex;
+}
+
+.recipe-search {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.recipe-search form{
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  align-items: center;
+}
+
+#rec-search-btn {
+  width: 40%;
+  margin-top: 20px;
+  }
+
+.recipe-search input{
+  width: 100%;
+}
+
+.recipe-results {
+  display: flex;
+}
+
+.recipe-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  width: 100%;
+}
+
+.ind-recipe {
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+  padding: 10px;
+  background-color: #87AB69;
+  border-radius: 10px;
+}
+
+.ind-recipe img{
+  width: 175px;
+}
+
+.element-input {
+  text-align: center;
+}
+
+input {
+  height: 50px;
+  border-radius: 10px;
+  border-style: none;
+}
+
+.button {
+  border-radius: 10px;
+  border-style: none;
+  background-color: #87AB69;
+  height: 35px;
+}
+
+.button:hover{
+  background-color: #658354;
+}
+
+.button:active{
+
+}
+

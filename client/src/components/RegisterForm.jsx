@@ -120,14 +120,14 @@ const RegisterForm = ({ setProfile }) => {
           </div>
           <div className="register-buttons">
             <button
-              className="register-btn"
+              className="button"
               disabled={
                 !formValues.email || !formValues.firstName || !formValues.lastName || !formValues.username || !formValues.password || !formValues.confirmPassword || (formValues.password !== formValues.confirmPassword)
               }
             >
               Register Account
             </button>
-            <button className="switch-btn" onClick={() => setProfile(true)}>
+            <button className="button" onClick={() => setProfile(true)}>
               Return to Login
             </button>
           </div>

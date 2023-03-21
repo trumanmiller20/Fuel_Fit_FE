@@ -54,14 +54,14 @@ const LoginForm = ( { setUser, setProfile }) => {
           </div>
           <div className="login-buttons">
             <button
-              className="login-btn"
+              className="button"
               disabled={
                 !formValues.email && !formValues.password 
               }
             >
               Sign In
             </button>
-            <button className="switch-btn" onClick={() => setProfile(false)}>
+            <button className="button" onClick={() => setProfile(false)}>
               Register for Account
             </button>
           </div>
