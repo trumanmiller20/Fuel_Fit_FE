@@ -5,7 +5,7 @@ const About = () => {
     <div className="about">
       <SideBar />
       <div className="mission-statement">
-        <h2>About FUELfit</h2>
+        <h1>About FUELfit</h1>
         <p>
           More than a nutrition tracking app, FUELfit represents the potential
           to fundamentally change your perspective on food.

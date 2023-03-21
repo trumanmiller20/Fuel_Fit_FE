@@ -3,10 +3,11 @@ const RecipeCard = ({ searchResults }) => {
   <div className="recipe-cards">
     {searchResults?.map((recipe, index) => (
       <div className="ind-recipe" key={index}>
-        <h3>{recipe.title}</h3>
         <img src={recipe.image}/>
-        <h4>Cal/srv: {recipe.nutrition.nutrients[0].amount}</h4>
-        <h4>Prep time: {recipe.readyInMinutes} min.</h4>
+        <h4>{recipe.title}</h4>
+        <h5>{Math.round(parseInt(recipe.nutrition.nutrients[0].amount)).toString()} cal/serving</h5>
+        <h5>{recipe.readyInMinutes} min.</h5>
+        {/* <button className="button" id="rec-det-btn">VIEW</button> */}
       </div>
     ))}
   </div>

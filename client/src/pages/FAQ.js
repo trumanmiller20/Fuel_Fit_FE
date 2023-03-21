@@ -14,7 +14,7 @@ const FAQ = () => {
         <h1>FAQ</h1>
         <Accordion
           className="faq-accordion"
-          style={{ backgroundColor: 'black', color: 'white' }}
+          style={{ backgroundColor: '#646E59', color: 'white' }}
         >
           <AccordionSummary
             expandIcon={<ExpandMoreIcon />}
@@ -35,7 +35,7 @@ const FAQ = () => {
         </Accordion>
         <Accordion
           className="faq-accordion"
-          style={{ backgroundColor: 'black', color: 'white' }}
+          style={{ backgroundColor: '#646E59', color: 'white' }}
         >
           <AccordionSummary
             expandIcon={<ExpandMoreIcon />}
@@ -56,7 +56,7 @@ const FAQ = () => {
         </Accordion>
         <Accordion
           className="faq-accordion"
-          style={{ backgroundColor: 'black', color: 'white' }}
+          style={{ backgroundColor: '#646E59', color: 'white' }}
         >
           <AccordionSummary
             expandIcon={<ExpandMoreIcon />}
@@ -80,7 +80,7 @@ const FAQ = () => {
         </Accordion>
         <Accordion
           className="faq-accordion"
-          style={{ backgroundColor: 'black', color: 'white' }}
+          style={{ backgroundColor: '#646E59', color: 'white' }}
         >
           <AccordionSummary
             expandIcon={<ExpandMoreIcon />}
