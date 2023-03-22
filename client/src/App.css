@@ -231,13 +231,54 @@ input {
   transform: scale(1.05);
 }
 
-/* #rec-det-btn {
-  background-color: white;
-  width: 75px;
+.this-recipe {
+  display: flex;
+  justify-content: space-around;
 }
-#rec-det-btn:hover {
-  transform: scale(1.02);
+
+.rec-ingredients ul{
+  list-style: none;
 }
-#rec-det-btn:active {
-  transform: scale(1.05);
-} */
+
+.rec-nutrition ul{
+  list-style: none;
+}
+.rec-nutrition h4{
+  margin: 0;
+}
+.rec-nutrition h5{
+  margin-top: 10px;
+}
+.rec-ingredients h4{
+  margin: 0;
+}
+.rec-ingredients h5{
+  margin-top: 10px;
+}
+
+.rec-nut-item {
+  display: flex;
+}
+
+.recipe-tags {
+  display: flex;
+}
+
+.recipe-header {
+  margin-top: 25px;
+  background-color: black;
+  color: white;
+  height: 500px;
+  max-height: 600px;
+  width: 300px;
+  padding: 20px;
+}
+
+.recipe-header h4{
+  margin-left: 10px;
+  margin-top: 0;
+}
+
+.recipe-header img{
+  width: 300px;
+}
