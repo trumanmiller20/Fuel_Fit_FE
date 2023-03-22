@@ -1,8 +1,10 @@
 import { useParams } from 'react-router-dom'
 import { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
+import axios from 'axios'
+import { BASE_URL } from '../services/api'
 
-const RecipeDetails = ({ recipeResults }) => {
+const RecipeDetails = ({ recipeResults, userProfile }) => {
   let navigate = useNavigate()
   let { recipe_id } = useParams()
   const [thisRecipe, setThisRecipe] = useState()
@@ -50,33 +52,64 @@ const RecipeDetails = ({ recipeResults }) => {
     }
   }
 
+  let formattedInstructions = []
   const formatInstructions = () => {
-    let instructions = []
     for (
       let i = 0;
       i < thisRecipe?.analyzedInstructions[0]?.steps.length;
       i++
     ) {
-      instructions.push(thisRecipe?.analyzedInstructions[0].steps[i].step)
+      formattedInstructions.push(
+        thisRecipe?.analyzedInstructions[0].steps[i].step
+      )
     }
-    return instructions
+    return formattedInstructions
   }
 
+  let formattedIngredients = []
   const formatIngredients = () => {
-    let ingredients = []
     for (let i = 0; i < thisRecipe?.nutrition.ingredients.length; i++) {
-      ingredients.push(thisRecipe?.nutrition.ingredients[i].name)
+      formattedIngredients.push(thisRecipe?.nutrition.ingredients[i].name)
     }
-    return ingredients
+    return formattedIngredients
   }
 
-  formatInstructions()
-  formatIngredients()
-  console.log(thisRecipe)
+  const reqBody = {
+    title: thisRecipe?.title,
+    api_id: thisRecipe?.id,
+    image: thisRecipe?.image,
+    ingredients: formattedIngredients,
+    instructions: formattedInstructions,
+    calories: Math.floor(nutrients[0]?.amount),
+    fat: Math.floor(nutrients[1]?.amount),
+    protein: Math.floor(nutrients[8]?.amount),
+    carbs: Math.floor(nutrients[3]?.amount)
+  }
+
+  console.log(userProfile)
+
+  const saveUserRecipe = async (e) => {
+    e.preventDefault()
+    const token = localStorage.getItem('token')
+    const config = {
+      headers: {
+        Authorization: `Bearer ${token}`
+      }
+    }
+    await axios.post(
+      `${BASE_URL}/api/recipe/${userProfile.id}/add-recipe`,
+      reqBody,
+      config
+    )
+  }
 
   useEffect(() => {
     displayRecipe()
+    formatInstructions()
+    formatIngredients()
   }, [recipeResults])
+
+  console.log(thisRecipe)
 
   return (
     <div className="selected-recipe">
@@ -91,7 +124,9 @@ const RecipeDetails = ({ recipeResults }) => {
             <h4>Prep time: {thisRecipe.readyInMinutes} min.</h4>
             <h4>Servings: {thisRecipe.servings}</h4>
             <div className="rec-hdr-btns">
-              <button className="button">SAVE</button>
+              <button className="button" onClick={saveUserRecipe}>
+                SAVE
+              </button>
               <button className="button" onClick={() => navigate('/recipe')}>
                 Return to Search
               </button>

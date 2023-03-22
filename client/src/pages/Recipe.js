@@ -7,12 +7,12 @@ import RestaurantOutlined from '@mui/icons-material/RestaurantOutlined'
 const Recipe = ({
   recipeResults,
   getRecipeResults,
-  searchQuery,
-  setSearchQuery
+  recipeQuery,
+  setRecipeQuery
 }) => {
   const handleChange = (e) => {
     e.preventDefault()
-    setSearchQuery(e.target.value)
+    setRecipeQuery(e.target.value)
   }
 
   return (
@@ -28,7 +28,7 @@ const Recipe = ({
             onChange={handleChange}
             type="text"
             placeholder="i.e: pasta"
-            value={searchQuery}
+            value={recipeQuery}
             required
           />
           <button type="submit" className="button" id="rec-search-btn">

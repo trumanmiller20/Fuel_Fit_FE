@@ -15,17 +15,17 @@ export const SideBarData = [
     link: "/dashboard"
   },
   {
-    title: "My Macros",
+    title: "Macros",
     icon: <CalculateOutlinedIcon />,
     link: "/calculate"
   },
   {
-    title: "Grocery Plan",
+    title: "Grocery",
     icon: <ShoppingCartOutlinedIcon />,
     link: "/grocery"
   },
   {
-    title: "My Recipes",
+    title: "Recipes",
     icon: <RestaurantOutlinedIcon />,
     link: "/recipe"
   },
@@ -40,7 +40,7 @@ export const SideBarData = [
     link: "/faq"
   },
   {
-    title: "My Profile",
+    title: "Profile",
     icon: <AccountCircle />,
     link: "/profile"
   }

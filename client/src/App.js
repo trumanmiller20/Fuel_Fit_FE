@@ -20,15 +20,26 @@ const App = () => {
   const [user, setUser] = useState(null)
   const [userProfile, setUserProfile] = useState(null)
   const [recipeResults, setRecipeResults] = useState(null)
-  const [searchQuery, setSearchQuery] = useState('')
+  const [recipeQuery, setRecipeQuery] = useState('')
+  const [groceryQuery, setGroceryQuery] = useState('')
+  const [groceryResults, setGroceryResults] = useState(null)
 
   const getRecipeResults = async (e) => {
     e.preventDefault()
     const res = await axios.get(
-      `https://api.spoonacular.com/recipes/complexSearch?apiKey=${process.env.REACT_APP_API_KEY}&query=${searchQuery}&number=30&addRecipeInformation=true&addRecipeNutrition=true`
+      `https://api.spoonacular.com/recipes/complexSearch?apiKey=${process.env.REACT_APP_API_KEY}&query=${recipeQuery}&number=30&addRecipeInformation=true&addRecipeNutrition=true`
     )
-    setSearchQuery('')
+    setRecipeQuery('')
     setRecipeResults(res.data.results)
+  }
+
+  const getGroceryResults = async (e) => {
+    e.preventDefault()
+    const res = await axios.get(
+      `https://api.spoonacular.com/food/ingredients/search?apiKey=${process.env.REACT_APP_API_KEY}&query=${groceryQuery}&number=20`
+    )
+    setGroceryQuery('')
+    setGroceryResults(res.data.results)
   }
 
   const getUserDetails = async () => {
@@ -50,7 +61,17 @@ const App = () => {
         ></Route>
         <Route path="/faq" element={<FAQ />}></Route>
         <Route path="/food-details/:food_id" element={<FoodDetails />}></Route>
-        <Route path="/grocery" element={<Grocery />}></Route>
+        <Route
+          path="/grocery"
+          element={
+            <Grocery
+              groceryResults={groceryResults}
+              getGroceryResults={getGroceryResults}
+              groceryQuery={groceryQuery}
+              setGroceryQuery={setGroceryQuery}
+            />
+          }
+        ></Route>
         <Route path="/" element={<LoginPage setUser={setUser} />}></Route>
         <Route
           path="/recipe"
@@ -58,14 +79,19 @@ const App = () => {
             <Recipe
               recipeResults={recipeResults}
               getRecipeResults={getRecipeResults}
-              searchQuery={searchQuery}
-              setSearchQuery={setSearchQuery}
+              recipeQuery={recipeQuery}
+              setRecipeQuery={setRecipeQuery}
             />
           }
         ></Route>
         <Route
           path="/recipe-details/:recipe_id"
-          element={<RecipeDetails recipeResults={recipeResults} />}
+          element={
+            <RecipeDetails
+              recipeResults={recipeResults}
+              userProfile={userProfile}
+            />
+          }
         ></Route>
       </Routes>
     </div>

@@ -1,48 +1,45 @@
 import SideBar from '../components/SideBar'
-import { BASE_URL } from '../services/api'
 import { useState, useEffect } from 'react'
 import axios from 'axios'
+import FoodCard from '../components/FoodCard'
+import ShoppingCartOutlined from '@mui/icons-material/ShoppingCartOutlined'
 
-const Grocery = () => {
-  const [searchQuery, setSearchQuery] = useState('')
-  const [searchResults, setSearchResults] = useState([])
-
+const Grocery = ({
+  groceryResults,
+  getGroceryResults,
+  groceryQuery,
+  setGroceryQuery
+}) => {
   const handleChange = (e) => {
     e.preventDefault()
-    setSearchQuery(e.target.value)
+    setGroceryQuery(e.target.value)
   }
-  const API_KEY = process.env.REACT_APP_SPOONACULAR_KEY
-
-  const getSearchResults = async () => {
-    const res = await axios.get(
-      `https://api.spoonacular.com/food/ingredients/search?apiKey=${API_KEY}&query=${searchQuery}&number=5&metaInformation=true`
-    )
-    console.log(res)
-    // setSearchResults(res.products)
-  }
+  console.log(groceryResults)
 
   return (
     <div className="grocery">
       <SideBar />
-      <form className="grocery-search" onSubmit={getSearchResults}>
-        <h1>Search Grocery Items</h1>
-        <div className="form-element">
-          {/* <label className="element-label" htmlFor="query">
-            Search Query:
-          </label> */}
+      <div className="grocery-search">
+        <form onSubmit={getGroceryResults}>
+          <h1>
+            <ShoppingCartOutlined /> Search Grocery Items
+          </h1>
           <input
             className="element-input"
             onChange={handleChange}
             type="text"
             placeholder="i.e: chicken breast"
-            value={searchQuery}
+            value={groceryQuery}
             required
           />
+          <button type="submit" className="button" id="gro-search-btn">
+            Search
+          </button>
+        </form>
+        <div className="recipe-results">
+          <FoodCard groceryResults={groceryResults} />
         </div>
-        <button className="search-btn" type="submit">
-          Search
-        </button>
-      </form>
+      </div>
     </div>
   )
 }
