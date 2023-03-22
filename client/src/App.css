@@ -224,7 +224,7 @@ input {
 }
 
 .button:hover{
-  background-color: #7b886f;
+  background-color: #88967a;
 }
 
 .button:active{
@@ -234,24 +234,46 @@ input {
 .this-recipe {
   display: flex;
   justify-content: space-around;
+  color: white;
 }
 
-.rec-ingredients ul{
-  list-style: none;
+.rec-ingredients {
+  background-color: black;
+  padding: 15px;
+  margin: 25px;
+  width: 450px;
+  border-radius: 5px;
+  height: 500px;
+  overflow: scroll;
+}
+
+.rec-nutrition {
+  background-color: black;
+  padding: 15px;
+  margin: 25px 25px 25px 0;
+  width: 300px;
+  border-radius: 5px;
+  height: 500px;
+  overflow: scroll;
+}
+
+.rec-ingredients li{
+  margin: 15px;
+  list-style-type: circle;
+}
+
+.rec-ingredients h2{
+  margin-bottom: 40px;
 }
 
 .rec-nutrition ul{
   list-style: none;
 }
 .rec-nutrition h4{
-  margin: 0;
-}
-.rec-nutrition h5{
   margin-top: 10px;
+  margin-right: 20px;
 }
-.rec-ingredients h4{
-  margin: 0;
-}
+
 .rec-ingredients h5{
   margin-top: 10px;
 }
@@ -265,11 +287,11 @@ input {
 }
 
 .recipe-header {
-  margin-top: 25px;
+  margin: 25px 0 25px 25px;
   background-color: black;
   color: white;
-  height: 500px;
-  max-height: 600px;
+  height: 600px;
+  max-height: 700px;
   width: 300px;
   padding: 20px;
 }
@@ -281,4 +303,59 @@ input {
 
 .recipe-header img{
   width: 300px;
+}
+
+.rec-nut-item {
+  display: flex;
+  align-items: center;
+  width: 80%;
+  justify-content: space-between;
+}
+
+.rec-hdr-btns {
+  display: flex;
+  justify-content: space-between;
+}
+
+.rec-hdr-btns button{
+  width: 40%;
+  background-color: #7b886f;
+}
+
+.ind-ing-item {
+  display: flex;
+}
+
+.ind-ing-item h3{
+  margin-right: 10px;
+}
+
+.ing-hdr {
+  display: flex;
+  justify-content: space-between;
+}
+
+.ing-hdr button{
+  background-color: #7b886f;
+  margin: 15px 10px 0 0;
+}
+
+.inst-hdr {
+  display: flex;
+  justify-content: space-between;
+}
+
+.inst-hdr button{
+  background-color: #7b886f;
+  margin: 15px 10px 0 0;
+}
+
+.rec-instructions {
+  background-color: black;
+  padding: 15px;
+  margin: 25px;
+  width: 450px;
+  border-radius: 5px;
+  height: 500px;
+  overflow: scroll;
 }

@@ -1,16 +1,12 @@
 import { useParams } from 'react-router-dom'
 import { useState, useEffect } from 'react'
-import Table from '@mui/material/Table'
-import TableBody from '@mui/material/TableBody'
-import TableCell from '@mui/material/TableCell'
-import TableContainer from '@mui/material/TableContainer'
-import TableHead from '@mui/material/TableHead'
-import TableRow from '@mui/material/TableRow'
-import Paper from '@mui/material/Paper'
+import { useNavigate } from 'react-router-dom'
 
 const RecipeDetails = ({ recipeResults }) => {
+  let navigate = useNavigate()
   let { recipe_id } = useParams()
   const [thisRecipe, setThisRecipe] = useState()
+  const [showInstruct, setShowInstruct] = useState(true)
 
   const displayRecipe = () => {
     const result = recipeResults.filter(
@@ -45,12 +41,19 @@ const RecipeDetails = ({ recipeResults }) => {
     }
   }
   getNutrients()
-  console.log(nutrients)
+
+  const toggleInstructions = () => {
+    if (showInstruct === true) {
+      setShowInstruct(false)
+    } else {
+      setShowInstruct(true)
+    }
+  }
 
   useEffect(() => {
     displayRecipe()
   }, [recipeResults])
-  console.log(thisRecipe)
+
   return (
     <div className="selected-recipe">
       {thisRecipe ? (
@@ -63,31 +66,79 @@ const RecipeDetails = ({ recipeResults }) => {
             </div>
             <h4>Prep time: {thisRecipe.readyInMinutes} min.</h4>
             <h4>Servings: {thisRecipe.servings}</h4>
+            <div className="rec-hdr-btns">
+              <button className="button">SAVE</button>
+              <button className="button" onClick={() => navigate('/recipe')}>
+                Return to Search
+              </button>
+            </div>
           </div>
-          <div className="rec-ingredients">
-            <ul>
-              <h2>Ingredients</h2>
-              {thisRecipe?.nutrition?.ingredients.map((ingredient, index) => (
-                <li key={index}>
-                  <h4>{ingredient.name}</h4>
-                  <h5>
-                    {ingredient.amount}
-                    {'  '}
-                    {ingredient.unit}
-                  </h5>
-                </li>
-              ))}
-            </ul>
-          </div>
+          {showInstruct ? (
+            <div className="rec-ingredients">
+              <ul className="rec-ing-list">
+                <div className="ing-hdr">
+                  <h2>Ingredients</h2>
+                  <button
+                    className="button"
+                    onClick={() => toggleInstructions()}
+                  >
+                    Recipe Instructions
+                  </button>
+                </div>
+                <hr />
+                {thisRecipe?.nutrition?.ingredients.map((ingredient, index) => (
+                  <li key={index}>
+                    <div className="ind-ing-item">
+                      <h3>
+                        {ingredient.amount}
+                        {'  '}
+                        {ingredient.unit}
+                      </h3>
+                      <h3>-</h3>
+                      <h3>
+                        {ingredient.name.charAt(0).toUpperCase() +
+                          ingredient.name.slice(1)}
+                      </h3>
+                    </div>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ) : (
+            <div className="rec-instructions">
+              <ul className="rec-inst-list">
+                <div className="inst-hdr">
+                  <h2>Instructions</h2>
+                  <button
+                    className="button"
+                    onClick={() => toggleInstructions()}
+                  >
+                    Ingredients
+                  </button>
+                </div>
+                <hr />
+                {thisRecipe?.analyzedInstructions[0]?.steps.map(
+                  (step, index) => (
+                    <li key={index}>
+                      <div className="ind-inst-item">
+                        <p>{step.step}</p>
+                      </div>
+                    </li>
+                  )
+                )}
+              </ul>
+            </div>
+          )}
           <div className="rec-nutrition">
             <ul className="rec-nut-list">
               <h2>Nutrition</h2>
-              {nutrients?.map((nutrient) => (
-                <li className="rec-nut-item">
-                  <h4>{nutrient.name}</h4>
-                  <h5>
+              <hr />
+              {nutrients?.map((nutrient, index) => (
+                <li className="rec-nut-item" key={index}>
+                  <h4>{nutrient.name}:</h4>
+                  <h4>
                     {Math.floor(nutrient.amount)} {nutrient.unit}
-                  </h5>
+                  </h4>
                 </li>
               ))}
             </ul>
