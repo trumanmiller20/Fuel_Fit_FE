@@ -18,6 +18,7 @@ import { Route, Routes } from 'react-router-dom'
 
 const App = () => {
   const [user, setUser] = useState(null)
+  const [userProfile, setUserProfile] = useState(null)
   const [recipeResults, setRecipeResults] = useState(null)
   const [searchQuery, setSearchQuery] = useState('')
 
@@ -30,6 +31,12 @@ const App = () => {
     setRecipeResults(res.data.results)
   }
 
+  const getUserDetails = async () => {
+    const res = await axios.get(`${BASE_URL}/api/user/details/${user.id}`)
+    const userDetails = res.data
+    setUserProfile(userDetails)
+  }
+
   return (
     <div className="App">
       <NavBar />
@@ -37,7 +44,10 @@ const App = () => {
         <Route path="/profile" element={<Profile />}></Route>
         <Route path="/about" element={<About />}></Route>
         <Route path="/calculate" element={<Calculate />}></Route>
-        <Route path="/dashboard" element={<Dashboard />}></Route>
+        <Route
+          path="/dashboard"
+          element={<Dashboard getUserDetails={getUserDetails} />}
+        ></Route>
         <Route path="/faq" element={<FAQ />}></Route>
         <Route path="/food-details/:food_id" element={<FoodDetails />}></Route>
         <Route path="/grocery" element={<Grocery />}></Route>

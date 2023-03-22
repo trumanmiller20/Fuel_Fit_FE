@@ -17,8 +17,8 @@ const LoginForm = ( { setUser, setProfile }) => {
   const handleSubmit = async (e) => {
     e.preventDefault()
     const payload = await SignInUser(formValues)
-    setFormValues(initialState)
     setUser(payload)
+    setFormValues(initialState)
     navigate('/dashboard')
   }
 

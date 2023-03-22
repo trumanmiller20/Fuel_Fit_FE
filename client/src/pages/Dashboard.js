@@ -1,6 +1,10 @@
 import SideBar from '../components/SideBar'
+import { useState, useEffect } from 'react'
 
-const Dashboard = () => {
+const Dashboard = ({ getUserDetails }) => {
+  useEffect(() => {
+    getUserDetails()
+  }, [])
   return (
     <div className="dashboard">
       <SideBar />

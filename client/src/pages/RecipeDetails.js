@@ -50,6 +50,30 @@ const RecipeDetails = ({ recipeResults }) => {
     }
   }
 
+  const formatInstructions = () => {
+    let instructions = []
+    for (
+      let i = 0;
+      i < thisRecipe?.analyzedInstructions[0]?.steps.length;
+      i++
+    ) {
+      instructions.push(thisRecipe?.analyzedInstructions[0].steps[i].step)
+    }
+    return instructions
+  }
+
+  const formatIngredients = () => {
+    let ingredients = []
+    for (let i = 0; i < thisRecipe?.nutrition.ingredients.length; i++) {
+      ingredients.push(thisRecipe?.nutrition.ingredients[i].name)
+    }
+    return ingredients
+  }
+
+  formatInstructions()
+  formatIngredients()
+  console.log(thisRecipe)
+
   useEffect(() => {
     displayRecipe()
   }, [recipeResults])
