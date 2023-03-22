@@ -27,7 +27,6 @@ const App = () => {
       `https://api.spoonacular.com/recipes/complexSearch?apiKey=${process.env.REACT_APP_API_KEY}&query=${searchQuery}&number=30&addRecipeInformation=true&addRecipeNutrition=true`
     )
     setSearchQuery('')
-    console.log(res)
     setRecipeResults(res.data.results)
   }
 

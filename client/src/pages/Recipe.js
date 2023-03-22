@@ -35,7 +35,7 @@ const Recipe = ({
             Search
           </button>
         </form>
-        <div class="recipe-results">
+        <div className="recipe-results">
           <RecipeCard recipeResults={recipeResults} />
         </div>
       </div>

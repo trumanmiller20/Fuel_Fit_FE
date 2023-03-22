@@ -1,8 +1,8 @@
 import { useNavigate, useParams } from "react-router-dom"
 
-
 const RecipeCard = ({ recipeResults }) => {
   let navigate = useNavigate()
+
   return (
   <div className="recipe-cards">
     {recipeResults?.map((recipe, index) => (
