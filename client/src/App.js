@@ -18,6 +18,18 @@ import { Route, Routes } from 'react-router-dom'
 
 const App = () => {
   const [user, setUser] = useState(null)
+  const [recipeResults, setRecipeResults] = useState(null)
+  const [searchQuery, setSearchQuery] = useState('')
+
+  const getRecipeResults = async (e) => {
+    e.preventDefault()
+    const res = await axios.get(
+      `https://api.spoonacular.com/recipes/complexSearch?apiKey=${process.env.REACT_APP_API_KEY}&query=${searchQuery}&number=30&addRecipeInformation=true&addRecipeNutrition=true`
+    )
+    setSearchQuery('')
+    console.log(res)
+    setRecipeResults(res.data.results)
+  }
 
   return (
     <div className="App">
@@ -31,10 +43,20 @@ const App = () => {
         <Route path="/food-details/:food_id" element={<FoodDetails />}></Route>
         <Route path="/grocery" element={<Grocery />}></Route>
         <Route path="/" element={<LoginPage setUser={setUser} />}></Route>
-        <Route path="/recipe" element={<Recipe />}></Route>
+        <Route
+          path="/recipe"
+          element={
+            <Recipe
+              recipeResults={recipeResults}
+              getRecipeResults={getRecipeResults}
+              searchQuery={searchQuery}
+              setSearchQuery={setSearchQuery}
+            />
+          }
+        ></Route>
         <Route
           path="/recipe-details/:recipe_id"
-          element={<RecipeDetails />}
+          element={<RecipeDetails recipeResults={recipeResults} />}
         ></Route>
       </Routes>
     </div>
