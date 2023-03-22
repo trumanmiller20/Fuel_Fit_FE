@@ -7,7 +7,10 @@ const FoodCard = ({ groceryResults }) => {
   <div className="grocery-cards">
     {groceryResults?.map((grocery, index) => (
       <div className="ind-grocery" key={index}>
-        <h4>{grocery.name}</h4>
+        <div className="grocery-title">
+          <h4>{grocery.name.charAt(0).toUpperCase() +
+                          grocery.name.slice(1)}</h4>
+        </div>
         <img src={`https://spoonacular.com/cdn/ingredients_500x500/${grocery.image}`}/>
       </div>
     ))}
