@@ -1,6 +1,7 @@
 import { useState } from 'react'
-import LoginForm from '../components/LoginForm'
 import RegisterForm from '../components/RegisterForm'
+import LockOpenOutlinedIcon from '@mui/icons-material/LockOpenOutlined'
+import LoginForm from '../components/LoginForm'
 
 const LoginPage = ({ setUser, getUserDetails }) => {
   const [hasProfile, setProfile] = useState(true)
@@ -8,13 +9,17 @@ const LoginPage = ({ setUser, getUserDetails }) => {
   return (
     <div className="user-login">
       {hasProfile ? (
-        <LoginForm
-          setUser={setUser}
-          setProfile={setProfile}
-          getUserDetails={getUserDetails}
-        />
+        <div className="login-form-1">
+          <LoginForm
+            setUser={setUser}
+            setProfile={setProfile}
+            getUserDetails={getUserDetails}
+          />
+        </div>
       ) : (
-        <RegisterForm setProfile={setProfile} />
+        <div className="login-form-2">
+          <RegisterForm setProfile={setProfile} />
+        </div>
       )}
     </div>
   )

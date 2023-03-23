@@ -27,6 +27,7 @@ const LoginForm = ( { setUser, setProfile, getUserDetails }) => {
     <div className="login-wrapper">
       <div className="login-card">
         <form className="login-form" onSubmit={handleSubmit}>
+          <h1>Login to Continue</h1>
           <div className="form-element">
             <label className="element-label" htmlFor="username">
               Username

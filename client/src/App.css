@@ -67,6 +67,69 @@ body {
   color: white;
 }
 
+.user-login {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.user-login img{
+  height: 300px;
+  width: 300px;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: black;
+  border-radius: 10px;
+  padding: 20px;
+  color: white;
+}
+
+.register-form {
+  display: flex;
+  flex-direction: column;
+  overflow: scroll;
+  height: 80vh;
+  margin: 25px;
+  align-items: center;
+  background-color: black;
+  border-radius: 10px;
+  padding: 20px;
+  color: white;
+}
+
+.register-buttons {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+}
+
+.register-buttons button{
+  height: 50px;
+  width: 40%;
+  margin: 15px;
+}
+
+.form-element{
+  margin: 20px;
+}
+
+.login-buttons {
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+}
+.login-buttons button{
+  height: 50px;
+  width: 40%;
+  margin-top: 10px;
+}
+
+
 .nav-container {
   width: 100vw;
   height: 60px;
