@@ -107,6 +107,11 @@ const Calculate = ({
               <FemaleIcon fontSize="large" />
             </button>
           </div>
+          {gender === 'male' ? (
+            <h5>*Calculator calibrated for male*</h5>
+          ) : (
+            <h5>*Calculator calibrated for female*</h5>
+          )}
           <div className="secondary-calc">
             <h2>Conversions</h2>
             <form className="lbs-kilo">

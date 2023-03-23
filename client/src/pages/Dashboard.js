@@ -8,6 +8,7 @@ const Dashboard = ({ getUserDetails }) => {
   return (
     <div className="dashboard">
       <SideBar />
+      <div className="user-dashboard"></div>
     </div>
   )
 }
