@@ -202,7 +202,7 @@ input {
 }
 
 .button {
-  /* border-radius: 5px; */
+  border-radius: 10px;
   border-style: none;
   background-color: #646E59;
   height: 35px;
@@ -514,11 +514,13 @@ input {
 
 .dashboard-all {
   display: flex;
-  background-color: #88967a;
-}
-
-.user-card-data {
-  background-color: black;
+  justify-content: space-around;
+  color: black;
+  padding: 25px;
+  margin: 25px 25px 0 0;
+  border-radius: 5px;
+  width: 100%;
+  /* background-color: white; */
   color: white;
 }
 
@@ -526,20 +528,32 @@ input {
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 90%;
+  margin-left: 30px;
+  background-color: black;
+  border-radius: 10px;;
 }
 
 .ind-groc-li {
   display: flex;
   height: 50px;
-  width: 200px;
+  width: 80%;
   align-items: center;
   justify-content: space-between;
   text-align: center;
-  background-color: black;
-  color: white;
-  border-radius: 10px;
   padding: 10px;
   margin: 5px;
+  border-radius: 5px;
+  background-color: #e4fccf;
+  color: black;
+}
+
+.ind-groc-li:hover{
+  transform: scale(1.03);
+}
+
+.ind-rec-li:hover{
+  transform: scale(1.03);
 }
 
 .ind-groc-li img{
@@ -561,25 +575,31 @@ input {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-left: 20px;
+  width: 90%;
+  background-color: black;
+  border-radius: 10px;
 }
+
+
 
 .ind-rec-li {
   display: flex;
-  height: 150px;
-  width: 200px;
+  height: 175px;
+  width: 80%;
   align-items: center;
   justify-content: space-between;
   text-align: center;
   padding: 10px;
   margin: 5px;
-  background-color: black;
-  color: white;
-  border-radius: 10px;;
+  background-color: #e4fccf;
+  border-radius: 5px;
+  color: black;
 }
 
 .ind-rec-li img{
-  height: 100px;
-  width: auto;
+  height: 125px;
+  width: 150px;;
   background-color: white;
   border-radius: 5px;;
 }
@@ -597,4 +617,20 @@ input {
 .user-rec-btns button{
   margin-top: 10px;
   border-radius: 10px;
+}
+
+.user-card-data {
+  background-color: black;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.user-card {
+  text-align: left;
+  width: 90%;
+}
+
+.user-card h1{
+  font-size: 2.5em;
+  margin-top: 10px;
 }

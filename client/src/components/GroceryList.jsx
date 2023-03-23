@@ -23,12 +23,12 @@ const GroceryList = ({ userProfile, user }) => {
 
   return (
     <div className="grocery-list">
-      <h1>Grocery List</h1>
+      <h1>Groceries</h1>
         {userGroceries?.map((grocery) => (
           <div className="ind-groc-li" key={grocery.id}>
             <img src={`https://spoonacular.com/cdn/ingredients_500x500/${grocery.image}`} />
-            <h4>{grocery.name.charAt(0).toUpperCase() +
-          grocery.name.slice(1)}</h4>
+            <h3>{grocery.name.charAt(0).toUpperCase() +
+          grocery.name.slice(1)}</h3>
             <button className="button"><DeleteOutlineOutlinedIcon /></button>
           </div>
         ))}

@@ -44,21 +44,22 @@ const Dashboard = ({ getUserDetails, userProfile, user }) => {
       <SideBar />
       <div className="dashboard-all">
         <div className="user-card">
-          <h1>Dashboard</h1>
           <div className="user-card-data">
-            <h2>
+            <h1>
               {userProfile?.firstName} {userProfile?.lastName}
-            </h2>
+            </h1>
+            <br />
             <hr />
-            <h3>TDEE: {userTDEE} cal</h3>
-            <h3>Height: {userProfile?.height} cm</h3>
-            <h3>Weight: {userProfile?.weight} kg</h3>
-            <h3>Age: {userProfile?.age} yrs</h3>
-            <h3>Activity Level: {userProfile?.activity}</h3>
+            <br />
+            <h2>TDEE: {userTDEE} cal</h2>
+            <h2>Height: {userProfile?.height} cm</h2>
+            <h2>Weight: {userProfile?.weight} kg</h2>
+            <h2>Age: {userProfile?.age} yrs</h2>
+            <h2>Activity Level: {userProfile?.activity}</h2>
           </div>
         </div>
-        <RecipeList userProfile={userProfile} user={user} />
         <GroceryList userProfile={userProfile} user={user} />
+        <RecipeList userProfile={userProfile} user={user} />
       </div>
     </div>
   )
