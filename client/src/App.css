@@ -202,7 +202,7 @@ input {
 }
 
 .button {
-  border-radius: 5px;
+  /* border-radius: 5px; */
   border-style: none;
   background-color: #646E59;
   height: 35px;
@@ -355,28 +355,27 @@ input {
 
 .ind-grocery {
   width: 150px;
-  height: 175px;
+  height: 215px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
   text-align: center;
   margin-top: 15px;
-  /* padding: 10px; */
+  padding: 10px;
   /* border-radius: 10px; */
-  background-color: black;
-  color: white;
+  /* background-color: white; */
+  color: black;
 }
 
 .ind-grocery:hover {
-  transform: scale(1.1);
-  border: 1px solid black;
+  transform: scale(1.2);
+  /* border: 2px solid black; */
 }
 
 .ind-grocery h4 {
-  overflow: ellipsis;
-  height: 100%;
-  width: 90%;
+  /* height: 100%; */
+  width: 80%;
   margin: 5px;
   justify-self: center;
 }
@@ -390,8 +389,18 @@ input {
 .ind-grocery img{
   width: 150px;
   height: 125px;;
-  margin: 0;
+  margin-top: 5px;
   background-color: white;
+}
+
+.ind-grocery button{
+  width: 90%;
+  height: 30px;
+}
+
+.add-grocery-item{
+  width: 90%;
+  height: 30px;
 }
 
 .grocery {

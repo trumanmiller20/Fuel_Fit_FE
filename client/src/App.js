@@ -60,7 +60,10 @@ const App = () => {
           element={<Dashboard getUserDetails={getUserDetails} />}
         ></Route>
         <Route path="/faq" element={<FAQ />}></Route>
-        <Route path="/food-details/:food_id" element={<FoodDetails />}></Route>
+        <Route
+          path="/food-details/:food_id"
+          element={<FoodDetails userProfile={userProfile} />}
+        ></Route>
         <Route
           path="/grocery"
           element={
@@ -69,6 +72,7 @@ const App = () => {
               getGroceryResults={getGroceryResults}
               groceryQuery={groceryQuery}
               setGroceryQuery={setGroceryQuery}
+              userProfile={userProfile}
             />
           }
         ></Route>

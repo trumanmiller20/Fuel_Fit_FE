@@ -8,7 +8,8 @@ const Grocery = ({
   groceryResults,
   getGroceryResults,
   groceryQuery,
-  setGroceryQuery
+  setGroceryQuery,
+  userProfile
 }) => {
   const handleChange = (e) => {
     e.preventDefault()
@@ -37,7 +38,7 @@ const Grocery = ({
           </button>
         </form>
         <div className="recipe-results">
-          <FoodCard groceryResults={groceryResults} />
+          <FoodCard groceryResults={groceryResults} userProfile={userProfile} />
         </div>
       </div>
     </div>
