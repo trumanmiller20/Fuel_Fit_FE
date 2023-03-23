@@ -12,8 +12,8 @@ const Calculate = ({ userProfile }) => {
   }
   const [updateInfo, setUpdateInfo] = useState(initialTDEE)
   const [gender, setGender] = useState(true)
-  const [lbs, setLbs] = useState('')
-  const [inches, setInches] = useState('')
+  const [lbs, setLbs] = useState()
+  const [inches, setInches] = useState()
 
   // let updatedUser = userProfile
   const updateUserDetails = async () => {
@@ -35,8 +35,18 @@ const Calculate = ({ userProfile }) => {
     )
   }
 
-  const handleChange = (e) => {
+  const handleInfoChange = (e) => {
+    e.preventDefault()
     setUpdateInfo({ [e.target.name]: e.target.value })
+  }
+
+  const handleLbs = (e) => {
+    e.preventDefault()
+    setLbs(e.target.value)
+  }
+  const handleInches = (e) => {
+    e.preventDefault()
+    setInches({ [e.target.name]: e.target.value })
   }
 
   return (
@@ -44,30 +54,54 @@ const Calculate = ({ userProfile }) => {
       <SideBar />
       <div className="calculate-macros-hdr">
         <h1>Calculate Your Macros</h1>
-        <button className="button" onClick={() => setGender(!gender)}>
-          Toggle Gender
-        </button>
+        {gender ? (
+          <div>
+            <button className="button" onClick={() => setGender(!gender)}>
+              Toggle Sex
+            </button>
+            <h4>Female</h4>
+          </div>
+        ) : (
+          <div>
+            <button className="button" onClick={() => setGender(!gender)}>
+              Toggle Sex
+            </button>
+            <h4>Male</h4>
+          </div>
+        )}
         <div className="macro-calculators">
           <div className="secondary-calc">
             <form className="lbs-kilo">
               <label className="label">Convert pounds to kilograms:</label>
               <input
                 className="element-input"
-                onChange={() => handleChange}
+                onChange={handleLbs}
                 type="text"
+                name="lbs"
                 value={lbs}
                 required
               />
+              {lbs ? (
+                <h3>{parseInt(lbs) * 0.453592} kg</h3>
+              ) : (
+                <h4>* Enter weight to see conversion *</h4>
+              )}
             </form>
             <form className="in-cm">
               <label className="label">Convert inches to centimeters:</label>
               <input
                 className="element-input"
-                onChange={() => handleChange}
+                onChange={() => handleInches}
                 type="text"
+                name="inches"
                 value={inches}
                 required
               />
+              {inches ? (
+                <h3>{parseInt(inches) * 2.54} kg</h3>
+              ) : (
+                <h4>* Enter height to see conversion *</h4>
+              )}
             </form>
           </div>
           <div className="TDEE-calc">
@@ -76,32 +110,36 @@ const Calculate = ({ userProfile }) => {
               <label className="label">Height (in)</label>
               <input
                 className="element-input"
-                onChange={() => handleChange}
+                onChange={() => handleInfoChange}
                 type="text"
+                name="height"
                 value={updateInfo.height}
                 required
               />
               <label className="label">Weight (kg)</label>
               <input
                 className="element-input"
-                onChange={() => handleChange}
+                onChange={() => handleInfoChange}
                 type="text"
+                name="weight"
                 value={updateInfo.weight}
                 required
               />
               <label className="label">Age (yr)</label>
               <input
                 className="element-input"
-                onChange={() => handleChange}
+                onChange={() => handleInfoChange}
                 type="text"
+                name="age"
                 value={updateInfo.age}
                 required
               />
               <label className="label">Activity Level</label>
               <input
                 className="element-input"
-                onChange={() => handleChange}
+                onChange={() => handleInfoChange}
                 type="text"
+                name="activity"
                 placeholder="1-5"
                 value={updateInfo.activity}
                 required
