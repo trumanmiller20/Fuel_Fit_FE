@@ -433,3 +433,7 @@ input {
 .grocery-results {
   display: flex;
 }
+
+.calculate {
+  display: flex;
+}
