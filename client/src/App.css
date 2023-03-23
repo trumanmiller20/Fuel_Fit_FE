@@ -219,6 +219,7 @@ input {
 
 .this-recipe {
   display: flex;
+  width: 80%;
   justify-content: space-around;
   color: white;
 }
@@ -276,7 +277,7 @@ input {
   margin: 25px 0 25px 25px;
   background-color: black;
   color: white;
-  height: 600px;
+  height: 100vh;
   max-height: 700px;
   width: 300px;
   padding: 20px;
@@ -318,12 +319,17 @@ input {
 
 .ing-hdr {
   display: flex;
-  justify-content: space-between;
+  /* flex-direction: column; */
+  justify-content: space-evenly;
+}
+
+.ing-hdr h2{
+  margin-right: 15px;;
 }
 
 .ing-hdr button{
   background-color: #7b886f;
-  margin: 15px 10px 0 0;
+  margin-top: 15px;
 }
 
 .inst-hdr {
@@ -516,10 +522,11 @@ input {
   display: flex;
   justify-content: space-around;
   color: black;
-  padding: 25px;
-  margin: 25px 25px 0 0;
+  /* padding: 25px; */
+  margin: 25px;
   border-radius: 5px;
-  width: 100%;
+  width: 80%;
+  height: 100%;;
   /* background-color: white; */
   color: white;
 }
@@ -531,7 +538,8 @@ input {
   width: 90%;
   margin-left: 30px;
   background-color: black;
-  border-radius: 10px;;
+  border-radius: 10px;
+  overflow: scroll;
 }
 
 .ind-groc-li {
@@ -544,7 +552,7 @@ input {
   padding: 10px;
   margin: 5px;
   border-radius: 5px;
-  background-color: #e4fccf;
+  background-color: white;
   color: black;
 }
 
@@ -579,6 +587,7 @@ input {
   width: 90%;
   background-color: black;
   border-radius: 10px;
+  overflow: scroll;
 }
 
 
@@ -588,13 +597,14 @@ input {
   height: 175px;
   width: 80%;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-evenly;
   text-align: center;
   padding: 10px;
   margin: 5px;
-  background-color: #e4fccf;
+  background-color: white;
   border-radius: 5px;
   color: black;
+  text-overflow: clip;
 }
 
 .ind-rec-li img{
@@ -633,4 +643,8 @@ input {
 .user-card h1{
   font-size: 2.5em;
   margin-top: 10px;
+}
+
+.selected-user-recipe {
+  display: flex;
 }

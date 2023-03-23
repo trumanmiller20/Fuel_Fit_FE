@@ -74,6 +74,9 @@ const RecipeDetails = ({ recipeResults, userProfile }) => {
     return formattedIngredients
   }
 
+  formatInstructions()
+  formatIngredients()
+
   const reqBody = {
     title: thisRecipe?.title,
     api_id: thisRecipe?.id,
@@ -86,7 +89,7 @@ const RecipeDetails = ({ recipeResults, userProfile }) => {
     carbs: Math.floor(nutrients[3]?.amount)
   }
 
-  console.log(userProfile)
+  console.log(reqBody)
 
   const saveUserRecipe = async (e) => {
     e.preventDefault()

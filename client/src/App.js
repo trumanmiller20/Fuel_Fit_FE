@@ -9,6 +9,7 @@ import Grocery from './pages/Grocery'
 import LoginPage from './pages/LoginPage'
 import Recipe from './pages/Recipe'
 import RecipeDetails from './pages/RecipeDetails'
+import UserRecipe from './pages/UserRecipe'
 import NavBar from './components/NavBar'
 import axios from 'axios'
 import { BASE_URL } from './services/api'
@@ -95,6 +96,10 @@ const App = () => {
       <Routes>
         <Route path="/profile" element={<Profile />}></Route>
         <Route path="/about" element={<About />}></Route>
+        <Route
+          path="/user-recipe/:recipe_id"
+          element={<UserRecipe userProfile={userProfile} />}
+        ></Route>
         <Route
           path="/calculate"
           element={
