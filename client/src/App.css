@@ -507,3 +507,30 @@ input {
 .macro-supplement {
   width: 30%;
 }
+
+.dashboard {
+  display: flex;
+}
+
+.ind-groc-li {
+  display: flex;
+  height: 50px;
+  width: 200px;
+  align-items: center;
+  justify-content: space-between;
+  text-align: center;
+  background-color: black;
+  color: white;
+  padding: 10px;
+  margin: 10px;
+}
+
+.ind-groc-li img{
+  height: 50px;
+  width: 50px;
+  background-color: white;
+}
+
+.ind-groc-li h4{
+  margin: 0 10px 0 10px;
+}

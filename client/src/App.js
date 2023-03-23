@@ -110,7 +110,12 @@ const App = () => {
         ></Route>
         <Route
           path="/dashboard"
-          element={<Dashboard getUserDetails={getUserDetails} />}
+          element={
+            <Dashboard
+              getUserDetails={getUserDetails}
+              userProfile={userProfile}
+            />
+          }
         ></Route>
         <Route path="/faq" element={<FAQ />}></Route>
         <Route
