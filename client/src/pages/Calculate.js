@@ -26,7 +26,7 @@ const Calculate = ({
   const [lbs, setLbs] = useState()
   const [inches, setInches] = useState()
   const [maleDisabled, setMaleDisabled] = useState(false)
-  const [femaleDisabled, setfemaleDisabled] = useState(true)
+  const [femaleDisabled, setFemaleDisabled] = useState(true)
 
   const resetTDEEForms = () => {
     setUpdateInfo(initialTDEE)
@@ -76,11 +76,13 @@ const Calculate = ({
 
   const setFemale = () => {
     setGender('female')
-    setfemaleDisabled(true)
+    setFemaleDisabled(true)
+    setMaleDisabled(false)
   }
   const setMale = () => {
     setGender('male')
     setMaleDisabled(true)
+    setFemaleDisabled(false)
   }
 
   return (
@@ -93,14 +95,14 @@ const Calculate = ({
             <button
               className="button"
               disabled={maleDisabled}
-              onClick={() => setMale}
+              onClick={() => setMale()}
             >
               <MaleIcon fontSize="large" />
             </button>
             <button
               className="button"
               disabled={femaleDisabled}
-              onClick={() => setFemale}
+              onClick={() => setFemale()}
             >
               <FemaleIcon fontSize="large" />
             </button>
