@@ -7,6 +7,8 @@ import AccordionSummary from '@mui/material/AccordionSummary'
 import AccordionDetails from '@mui/material/AccordionDetails'
 import Typography from '@mui/material/Typography'
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore'
+import MaleIcon from '@mui/icons-material/Male'
+import FemaleIcon from '@mui/icons-material/Female'
 import { Link } from 'react-router-dom'
 
 const Calculate = ({
@@ -16,12 +18,27 @@ const Calculate = ({
   updateInfo,
   setUpdateInfo,
   initialTDEE,
-  getUserDetails
+  getUserDetails,
+  setTDEE,
+  TDEE,
+  calcFormTDEE
 }) => {
   const [lbs, setLbs] = useState()
   const [inches, setInches] = useState()
+  const [maleDisabled, setMaleDisabled] = useState(false)
+  const [femaleDisabled, setfemaleDisabled] = useState(true)
 
-  const updateUserDetails = async () => {
+  const resetTDEEForms = () => {
+    setUpdateInfo(initialTDEE)
+    setLbs()
+    setInches()
+    getUserDetails()
+    setGender('female')
+  }
+
+  const updateUserDetails = async (e) => {
+    e.preventDefault()
+    console.log(updateInfo)
     const token = localStorage.getItem('token')
     const config = {
       headers: {
@@ -39,16 +56,13 @@ const Calculate = ({
       },
       config
     )
-    setUpdateInfo(initialTDEE)
-    setLbs()
-    setInches()
-    getUserDetails()
-    setGender('female')
+    calcFormTDEE()
+    resetTDEEForms()
   }
 
   const handleInfoChange = (e) => {
     e.preventDefault()
-    setUpdateInfo({ [e.target.name]: e.target.value })
+    setUpdateInfo({ ...updateInfo, [e.target.name]: e.target.value })
   }
 
   const handleLbs = (e) => {
@@ -60,31 +74,41 @@ const Calculate = ({
     setInches(e.target.value)
   }
 
+  const setFemale = () => {
+    setGender('female')
+    setfemaleDisabled(true)
+  }
+  const setMale = () => {
+    setGender('male')
+    setMaleDisabled(true)
+  }
+
   return (
     <div className="calculate">
       <SideBar />
       <div className="calculate-macros">
         <div className="calc-macros-hdr">
           <h1>Calculate TDEE</h1>
-          {gender === 'female' ? (
-            <div>
-              <button className="button" onClick={() => setGender('male')}>
-                Toggle Sex
-              </button>
-              <h4>FEMALE</h4>
-            </div>
-          ) : (
-            <div>
-              <button className="button" onClick={() => setGender('female')}>
-                Toggle Sex
-              </button>
-              <h4>MALE</h4>
-            </div>
-          )}
+          <div className="macros-hdr-btns">
+            <button
+              className="button"
+              disabled={maleDisabled}
+              onClick={() => setMale}
+            >
+              <MaleIcon fontSize="large" />
+            </button>
+            <button
+              className="button"
+              disabled={femaleDisabled}
+              onClick={() => setFemale}
+            >
+              <FemaleIcon fontSize="large" />
+            </button>
+          </div>
           <div className="secondary-calc">
             <h2>Conversions</h2>
             <form className="lbs-kilo">
-              <label className="label">Lbs to kgs</label>
+              <label className="label">Pounds to kilograms</label>
               <input
                 className="element-input"
                 onChange={handleLbs}
@@ -92,11 +116,15 @@ const Calculate = ({
                 value={lbs}
                 required
               />
-              {lbs ? <h3>{parseInt(lbs) * 0.453592} kg</h3> : <h4></h4>}
+              {lbs ? (
+                <h3>{Math.round(parseInt(lbs) * 0.453592)} kg</h3>
+              ) : (
+                <h4></h4>
+              )}
             </form>
 
             <form className="in-cm">
-              <label className="label">Inches to cm</label>
+              <label className="label">Inches to centimeters</label>
               <input
                 className="element-input"
                 onChange={handleInches}
@@ -104,12 +132,16 @@ const Calculate = ({
                 value={inches}
                 required
               />
-              {inches ? <h3>{parseInt(inches) * 2.54} cm</h3> : <h4></h4>}
+              {inches ? (
+                <h3>{Math.round(parseInt(inches) * 2.54)} cm</h3>
+              ) : (
+                <h4></h4>
+              )}
             </form>
           </div>
         </div>
         <div className="TDEE-calc">
-          <form onSubmit={() => updateUserDetails}>
+          <form onSubmit={updateUserDetails}>
             <h2>TDEE Calculator</h2>
             <label className="label">Height (cm)</label>
             <input
@@ -144,7 +176,7 @@ const Calculate = ({
               onChange={handleInfoChange}
               type="text"
               name="activity"
-              placeholder="1-5"
+              placeholder="1-4"
               value={updateInfo.activity}
               required
             />
@@ -154,9 +186,9 @@ const Calculate = ({
           </form>
         </div>
         <div className="macro-supplement">
-          <h1>My TDEE: 1000</h1>
+          <h1>My TDEE: {Math.round(TDEE)} cal</h1>
           <Accordion
-            className="faq-accordion"
+            className="macro-accordion"
             style={{ backgroundColor: 'black', color: 'white' }}
           >
             <AccordionSummary
@@ -177,7 +209,7 @@ const Calculate = ({
             </AccordionDetails>
           </Accordion>
           <Accordion
-            className="faq-accordion"
+            className="macro-accordion"
             style={{ backgroundColor: 'black', color: 'white' }}
           >
             <AccordionSummary
@@ -222,7 +254,7 @@ const Calculate = ({
             </AccordionDetails>
           </Accordion>
           <Accordion
-            className="faq-accordion"
+            className="macro-accordion"
             style={{ backgroundColor: 'black', color: 'white' }}
           >
             <AccordionSummary

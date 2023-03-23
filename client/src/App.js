@@ -30,6 +30,7 @@ const App = () => {
   const [groceryQuery, setGroceryQuery] = useState('')
   const [groceryResults, setGroceryResults] = useState(null)
   const [gender, setGender] = useState('female')
+  const [TDEE, setTDEE] = useState(null)
 
   const getRecipeResults = async (e) => {
     e.preventDefault()
@@ -55,7 +56,34 @@ const App = () => {
     setUserProfile(userDetails)
   }
 
-  console.log(userProfile)
+  const calcFormTDEE = () => {
+    let correctionVar
+    if (gender === 'male') {
+      correctionVar = -161
+    } else if (gender === 'female') {
+      correctionVar = 5
+    }
+    let REE =
+      10 * updateInfo.weight +
+      6.25 * updateInfo.height -
+      5 * updateInfo.age +
+      correctionVar
+    const activityLevel = parseInt(updateInfo.activity)
+    switch (activityLevel) {
+      case 1:
+        setTDEE(REE * 1.2)
+        break
+      case 2:
+        setTDEE(REE * 1.375)
+        break
+      case 3:
+        setTDEE(REE * 1.55)
+        break
+      case 4:
+        setTDEE(REE * 1.725)
+        break
+    }
+  }
 
   return (
     <div className="App">
@@ -74,6 +102,9 @@ const App = () => {
               setUpdateInfo={setUpdateInfo}
               initialTDEE={initialTDEE}
               getUserDetails={getUserDetails}
+              setTDEE={setTDEE}
+              TDEE={TDEE}
+              calcFormTDEE={calcFormTDEE}
             />
           }
         ></Route>

@@ -463,6 +463,21 @@ input {
   margin: 10px;
 }
 
+.calc-macros-hdr button{
+  width: 45%;
+  height: 60px;
+  font-size: larger;
+  background-color: #646E59;
+  border-radius: 25px;
+}
+
+.macros-hdr-btns{
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
 .TDEE-calc {
   width: 30%;
   margin: 50px 0 50px 0;
