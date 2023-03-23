@@ -94,7 +94,16 @@ const App = () => {
     <div className="App">
       <NavBar />
       <Routes>
-        <Route path="/profile" element={<Profile />}></Route>
+        <Route
+          path="/profile"
+          element={
+            <Profile
+              userProfile={userProfile}
+              setUserProfile={setUserProfile}
+              getUserDetails={getUserDetails}
+            />
+          }
+        ></Route>
         <Route path="/about" element={<About />}></Route>
         <Route
           path="/user-recipe/:recipe_id"

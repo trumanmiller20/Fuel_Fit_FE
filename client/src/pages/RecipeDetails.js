@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
 import { BASE_URL } from '../services/api'
+import SideBar from '../components/SideBar'
 
 const RecipeDetails = ({ recipeResults, userProfile }) => {
   let navigate = useNavigate()
@@ -116,6 +117,7 @@ const RecipeDetails = ({ recipeResults, userProfile }) => {
 
   return (
     <div className="selected-recipe">
+      <SideBar />
       {thisRecipe ? (
         <div className="this-recipe">
           <div className="recipe-header">
