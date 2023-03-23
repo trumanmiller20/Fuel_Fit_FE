@@ -3,7 +3,7 @@ import { BASE_URL } from "../services/api"
 import { useState, useEffect } from 'react'
 import DeleteOutlineOutlinedIcon from '@mui/icons-material/DeleteOutlineOutlined';
 
-const GroceryList = ({ userProfile }) => {
+const GroceryList = ({ userProfile, user }) => {
   const [userGroceries, setUserGroceries] = useState()
 
   const getUserGroceries = async () => {
@@ -13,7 +13,7 @@ const GroceryList = ({ userProfile }) => {
         Authorization: `Bearer ${token}`
       }
     }
-    const res = await axios.get(`${BASE_URL}/api/grocery/${userProfile?.id}/groceries`, config)
+    const res = await axios.get(`${BASE_URL}/api/grocery/${user.id}/groceries`, config)
     setUserGroceries(res.data)
   }
 
@@ -23,7 +23,7 @@ const GroceryList = ({ userProfile }) => {
 
   return (
     <div className="grocery-list">
-      <h2>Grocery List</h2>
+      <h1>Grocery List</h1>
         {userGroceries?.map((grocery) => (
           <div className="ind-groc-li" key={grocery.id}>
             <img src={`https://spoonacular.com/cdn/ingredients_500x500/${grocery.image}`} />

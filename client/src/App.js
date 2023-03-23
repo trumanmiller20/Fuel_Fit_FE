@@ -85,6 +85,10 @@ const App = () => {
     }
   }
 
+  useEffect(() => {
+    getUserDetails()
+  }, [user, TDEE])
+
   return (
     <div className="App">
       <NavBar />
@@ -114,6 +118,7 @@ const App = () => {
             <Dashboard
               getUserDetails={getUserDetails}
               userProfile={userProfile}
+              user={user}
             />
           }
         ></Route>
@@ -130,7 +135,12 @@ const App = () => {
             />
           }
         ></Route>
-        <Route path="/" element={<LoginPage setUser={setUser} />}></Route>
+        <Route
+          path="/"
+          element={
+            <LoginPage setUser={setUser} getUserDetails={getUserDetails} />
+          }
+        ></Route>
         <Route
           path="/recipe"
           element={

@@ -512,6 +512,22 @@ input {
   display: flex;
 }
 
+.dashboard-all {
+  display: flex;
+  background-color: #88967a;
+}
+
+.user-card-data {
+  background-color: black;
+  color: white;
+}
+
+.grocery-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .ind-groc-li {
   display: flex;
   height: 50px;
@@ -521,16 +537,64 @@ input {
   text-align: center;
   background-color: black;
   color: white;
+  border-radius: 10px;
   padding: 10px;
-  margin: 10px;
+  margin: 5px;
 }
 
 .ind-groc-li img{
   height: 50px;
   width: 50px;
   background-color: white;
+  border-radius: 5px;;
 }
 
 .ind-groc-li h4{
   margin: 0 10px 0 10px;
+}
+
+.ind-groc-li button{
+  border-radius: 10px;
+}
+
+.recipe-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.ind-rec-li {
+  display: flex;
+  height: 150px;
+  width: 200px;
+  align-items: center;
+  justify-content: space-between;
+  text-align: center;
+  padding: 10px;
+  margin: 5px;
+  background-color: black;
+  color: white;
+  border-radius: 10px;;
+}
+
+.ind-rec-li img{
+  height: 100px;
+  width: auto;
+  background-color: white;
+  border-radius: 5px;;
+}
+
+.ind-rec-li h4{
+  margin: 0 10px 0 10px;
+}
+
+.user-rec-btns {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.user-rec-btns button{
+  margin-top: 10px;
+  border-radius: 10px;
 }
