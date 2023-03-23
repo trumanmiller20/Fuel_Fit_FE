@@ -5,7 +5,6 @@ import About from './pages/About'
 import Calculate from './pages/Calculate'
 import Dashboard from './pages/Dashboard'
 import FAQ from './pages/FAQ'
-import FoodDetails from './pages/FoodDetails'
 import Grocery from './pages/Grocery'
 import LoginPage from './pages/LoginPage'
 import Recipe from './pages/Recipe'
@@ -60,10 +59,6 @@ const App = () => {
           element={<Dashboard getUserDetails={getUserDetails} />}
         ></Route>
         <Route path="/faq" element={<FAQ />}></Route>
-        <Route
-          path="/food-details/:food_id"
-          element={<FoodDetails userProfile={userProfile} />}
-        ></Route>
         <Route
           path="/grocery"
           element={

@@ -15,7 +15,6 @@ const Grocery = ({
     e.preventDefault()
     setGroceryQuery(e.target.value)
   }
-  console.log(groceryResults)
 
   return (
     <div className="grocery">

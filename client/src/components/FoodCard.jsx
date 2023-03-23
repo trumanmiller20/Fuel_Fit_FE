@@ -3,14 +3,8 @@ import { useState, useEffect } from 'react'
 import axios from "axios"
 import { BASE_URL } from "../services/api"
 
-const FoodCard = ({ groceryResults, userProfile }) => {
+const FoodCard = ({ groceryResults, userProfile}) => {
   let navigate = useNavigate()
-
-  // const recursiveFunction = () => {
-  //   if (start > end) return false
-  //   let mid = Math.floor((start + end) / 2)
-  //   if ()
-  // }
 
   const addUserGroceryItem = async (id, name, image) => {
     let groceryItem = {
