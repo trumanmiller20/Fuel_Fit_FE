@@ -46,109 +46,101 @@ const Calculate = ({ userProfile }) => {
   }
   const handleInches = (e) => {
     e.preventDefault()
-    setInches({ [e.target.name]: e.target.value })
+    setInches(e.target.value)
   }
 
   return (
     <div className="calculate">
       <SideBar />
-      <div className="calculate-macros-hdr">
-        <h1>Calculate Your Macros</h1>
-        {gender ? (
-          <div>
-            <button className="button" onClick={() => setGender(!gender)}>
-              Toggle Sex
-            </button>
-            <h4>Female</h4>
-          </div>
-        ) : (
-          <div>
-            <button className="button" onClick={() => setGender(!gender)}>
-              Toggle Sex
-            </button>
-            <h4>Male</h4>
-          </div>
-        )}
-        <div className="macro-calculators">
+      <div className="calculate-macros">
+        <div className="calc-macros-hdr">
+          <h1>Calculate Your Macros</h1>
+          {gender ? (
+            <div>
+              <button className="button" onClick={() => setGender(!gender)}>
+                Toggle Sex
+              </button>
+              <h4>Female</h4>
+            </div>
+          ) : (
+            <div>
+              <button className="button" onClick={() => setGender(!gender)}>
+                Toggle Sex
+              </button>
+              <h4>Male</h4>
+            </div>
+          )}
           <div className="secondary-calc">
+            <h1>Conversions</h1>
             <form className="lbs-kilo">
-              <label className="label">Convert pounds to kilograms:</label>
+              <label className="label">Lbs to Kgs</label>
               <input
                 className="element-input"
                 onChange={handleLbs}
                 type="text"
-                name="lbs"
                 value={lbs}
                 required
               />
-              {lbs ? (
-                <h3>{parseInt(lbs) * 0.453592} kg</h3>
-              ) : (
-                <h4>* Enter weight to see conversion *</h4>
-              )}
+              {lbs ? <h3>{parseInt(lbs) * 0.453592} kg</h3> : <h4></h4>}
             </form>
+
             <form className="in-cm">
-              <label className="label">Convert inches to centimeters:</label>
+              <label className="label">Inches to Cm</label>
               <input
                 className="element-input"
-                onChange={() => handleInches}
+                onChange={handleInches}
                 type="text"
-                name="inches"
                 value={inches}
                 required
               />
-              {inches ? (
-                <h3>{parseInt(inches) * 2.54} kg</h3>
-              ) : (
-                <h4>* Enter height to see conversion *</h4>
-              )}
+              {inches ? <h3>{parseInt(inches) * 2.54} cm</h3> : <h4></h4>}
             </form>
           </div>
-          <div className="TDEE-calc">
-            <form onSubmit={() => updateUserDetails}>
-              <h1>TDEE Calculator</h1>
-              <label className="label">Height (in)</label>
-              <input
-                className="element-input"
-                onChange={() => handleInfoChange}
-                type="text"
-                name="height"
-                value={updateInfo.height}
-                required
-              />
-              <label className="label">Weight (kg)</label>
-              <input
-                className="element-input"
-                onChange={() => handleInfoChange}
-                type="text"
-                name="weight"
-                value={updateInfo.weight}
-                required
-              />
-              <label className="label">Age (yr)</label>
-              <input
-                className="element-input"
-                onChange={() => handleInfoChange}
-                type="text"
-                name="age"
-                value={updateInfo.age}
-                required
-              />
-              <label className="label">Activity Level</label>
-              <input
-                className="element-input"
-                onChange={() => handleInfoChange}
-                type="text"
-                name="activity"
-                placeholder="1-5"
-                value={updateInfo.activity}
-                required
-              />
-              <button type="submit" className="button" id="macro-calc-btn">
-                Calculate
-              </button>
-            </form>
-          </div>
+        </div>
+        <div className="TDEE-calc">
+          <form onSubmit={() => updateUserDetails}>
+            <h1>TDEE Calculator</h1>
+            <label className="label">Height (cm)</label>
+            <input
+              className="element-input"
+              onChange={handleInfoChange}
+              type="text"
+              name="height"
+              value={updateInfo.height}
+              required
+            />
+            <label className="label">Weight (kg)</label>
+            <input
+              className="element-input"
+              onChange={handleInfoChange}
+              type="text"
+              name="weight"
+              value={updateInfo.weight}
+              required
+            />
+            <label className="label">Age (yr)</label>
+            <input
+              className="element-input"
+              onChange={handleInfoChange}
+              type="text"
+              name="age"
+              value={updateInfo.age}
+              required
+            />
+            <label className="label">Activity Level</label>
+            <input
+              className="element-input"
+              onChange={handleInfoChange}
+              type="text"
+              name="activity"
+              placeholder="1-5"
+              value={updateInfo.activity}
+              required
+            />
+            <button type="submit" className="button" id="macro-calc-btn">
+              Calculate
+            </button>
+          </form>
         </div>
       </div>
     </div>
