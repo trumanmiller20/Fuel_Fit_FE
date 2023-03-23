@@ -445,7 +445,7 @@ input {
 }
 
 .calc-macros-hdr {
-  width: 48%;
+  width: 30%;
 }
 .calc-macros-hdr form{
   display: flex;
@@ -466,8 +466,9 @@ input {
 }
 
 .TDEE-calc {
-  width: 48%;
-  margin-top: 50px;
+  width: 30%;
+  margin: 50px 0 50px 0;
+  padding: 10px;
   background-color: black;
   color: white;
   border-radius: 10px;

@@ -16,12 +16,20 @@ import { useNavigate } from 'react-router-dom'
 import { Route, Routes } from 'react-router-dom'
 
 const App = () => {
+  let initialTDEE = {
+    height: '',
+    weight: '',
+    age: '',
+    activity: ''
+  }
+  const [updateInfo, setUpdateInfo] = useState(initialTDEE)
   const [user, setUser] = useState(null)
   const [userProfile, setUserProfile] = useState(null)
   const [recipeResults, setRecipeResults] = useState(null)
   const [recipeQuery, setRecipeQuery] = useState('')
   const [groceryQuery, setGroceryQuery] = useState('')
   const [groceryResults, setGroceryResults] = useState(null)
+  const [gender, setGender] = useState(true)
 
   const getRecipeResults = async (e) => {
     e.preventDefault()
@@ -55,7 +63,15 @@ const App = () => {
         <Route path="/about" element={<About />}></Route>
         <Route
           path="/calculate"
-          element={<Calculate userProfile={userProfile} />}
+          element={
+            <Calculate
+              userProfile={userProfile}
+              setGender={setGender}
+              gender={gender}
+              updateInfo={updateInfo}
+              setUpdateInfo={setUpdateInfo}
+            />
+          }
         ></Route>
         <Route
           path="/dashboard"

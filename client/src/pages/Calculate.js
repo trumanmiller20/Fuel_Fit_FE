@@ -3,19 +3,16 @@ import { useState, useEffect } from 'react'
 import axios from 'axios'
 import { BASE_URL } from '../services/api'
 
-const Calculate = ({ userProfile }) => {
-  let initialTDEE = {
-    height: '',
-    weight: '',
-    age: '',
-    activity: ''
-  }
-  const [updateInfo, setUpdateInfo] = useState(initialTDEE)
-  const [gender, setGender] = useState(true)
+const Calculate = ({
+  userProfile,
+  setGender,
+  gender,
+  updateInfo,
+  setUpdateInfo
+}) => {
   const [lbs, setLbs] = useState()
   const [inches, setInches] = useState()
 
-  // let updatedUser = userProfile
   const updateUserDetails = async () => {
     const token = localStorage.getItem('token')
     const config = {
@@ -54,24 +51,24 @@ const Calculate = ({ userProfile }) => {
       <SideBar />
       <div className="calculate-macros">
         <div className="calc-macros-hdr">
-          <h1>Calculate Your Macros</h1>
+          <h1>Calculate TDEE</h1>
           {gender ? (
             <div>
               <button className="button" onClick={() => setGender(!gender)}>
                 Toggle Sex
               </button>
-              <h4>Female</h4>
+              <h4>FEMALE</h4>
             </div>
           ) : (
             <div>
               <button className="button" onClick={() => setGender(!gender)}>
                 Toggle Sex
               </button>
-              <h4>Male</h4>
+              <h4>MALE</h4>
             </div>
           )}
           <div className="secondary-calc">
-            <h1>Conversions</h1>
+            <h2>Conversions</h2>
             <form className="lbs-kilo">
               <label className="label">Lbs to Kgs</label>
               <input
@@ -99,7 +96,7 @@ const Calculate = ({ userProfile }) => {
         </div>
         <div className="TDEE-calc">
           <form onSubmit={() => updateUserDetails}>
-            <h1>TDEE Calculator</h1>
+            <h2>TDEE Calculator</h2>
             <label className="label">Height (cm)</label>
             <input
               className="element-input"
