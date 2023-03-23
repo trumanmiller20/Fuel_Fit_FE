@@ -29,7 +29,7 @@ const App = () => {
   const [recipeQuery, setRecipeQuery] = useState('')
   const [groceryQuery, setGroceryQuery] = useState('')
   const [groceryResults, setGroceryResults] = useState(null)
-  const [gender, setGender] = useState(true)
+  const [gender, setGender] = useState('female')
 
   const getRecipeResults = async (e) => {
     e.preventDefault()
@@ -55,6 +55,8 @@ const App = () => {
     setUserProfile(userDetails)
   }
 
+  console.log(userProfile)
+
   return (
     <div className="App">
       <NavBar />
@@ -70,6 +72,8 @@ const App = () => {
               gender={gender}
               updateInfo={updateInfo}
               setUpdateInfo={setUpdateInfo}
+              initialTDEE={initialTDEE}
+              getUserDetails={getUserDetails}
             />
           }
         ></Route>

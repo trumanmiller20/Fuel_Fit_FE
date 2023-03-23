@@ -457,8 +457,6 @@ input {
   background-color: black;
   color: white;
   padding: 15px;
-  border-radius: 10px;
-
 }
 
 .calc-macros-hdr input, label{
@@ -471,7 +469,6 @@ input {
   padding: 10px;
   background-color: black;
   color: white;
-  border-radius: 10px;
 }
 
 .TDEE-calc form{
@@ -488,4 +485,8 @@ input {
 .TDEE-calc button{
   width: 40%;
   margin-top: 10px;
+}
+
+.macro-supplement {
+  width: 30%;
 }
