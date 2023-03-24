@@ -231,6 +231,33 @@ const Calculate = ({
           >
             <AccordionSummary
               expandIcon={<ExpandMoreIcon />}
+              aria-controls="panel1a-content"
+              id="panel1a-header"
+            >
+              <Typography>Activity level</Typography>
+            </AccordionSummary>
+            <AccordionDetails>
+              <Typography>
+                (1) Sedentary: Everyday activities like light walking, eating,
+                talking etc.
+                <br />
+                (2) Light activity: Activity that burns additional 200-400 cal
+                for females or 250-500 cal for males.
+                <br />
+                (3) Moderate activity: Activity that burns additional 400-650
+                cal for females or 500-800 cal for males.
+                <br />
+                (4) High activity: Activity that burns additional 650+ cal for
+                females or 800+ cal for males.
+              </Typography>
+            </AccordionDetails>
+          </Accordion>
+          <Accordion
+            className="macro-accordion"
+            style={{ backgroundColor: 'black', color: 'white' }}
+          >
+            <AccordionSummary
+              expandIcon={<ExpandMoreIcon />}
               aria-controls="panel2a-content"
               id="panel2a-header"
             >
