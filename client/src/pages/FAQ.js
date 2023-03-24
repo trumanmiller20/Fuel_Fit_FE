@@ -100,6 +100,51 @@ const FAQ = () => {
             </Typography>
           </AccordionDetails>
         </Accordion>
+        <Accordion
+          className="faq-accordion"
+          style={{ backgroundColor: 'black', color: 'white' }}
+        >
+          <AccordionSummary
+            expandIcon={<ExpandMoreIcon />}
+            aria-controls="panel3a-content"
+            id="panel3a-header"
+          >
+            <Typography>How do I lose weight?</Typography>
+          </AccordionSummary>
+          <AccordionDetails>
+            <Typography>
+              For most individuals, aiming for a calorie deficit of 20% of your
+              TDEE will help you lose weight. For optimal results, also
+              implement dietary changes that focus on healthy macronutrient
+              intake and increase your activity level.
+            </Typography>
+          </AccordionDetails>
+        </Accordion>
+        <Accordion
+          className="faq-accordion"
+          style={{ backgroundColor: 'black', color: 'white' }}
+        >
+          <AccordionSummary
+            expandIcon={<ExpandMoreIcon />}
+            aria-controls="panel3a-content"
+            id="panel3a-header"
+          >
+            <Typography>How do I gain weight?</Typography>
+          </AccordionSummary>
+          <AccordionDetails>
+            <Typography>
+              Aiming for a 5-20% caloric excess will help you gain weight. This
+              excess must be tailored to the individual to ensure it is healthy,
+              and the importance of consuming healthy macros is not diminished
+              by the desire to gain vice lose. Having a caloric excess greater
+              than 20% of TDEE will usually result in unwanted buildup of fat
+              reserves and general lethargy. If an aggressive weight gain
+              strategy is employed, good exercise habits will ensure that the
+              weight gained is healthy and help establish your new baseline
+              TDEE.
+            </Typography>
+          </AccordionDetails>
+        </Accordion>
       </div>
     </div>
   )
