@@ -12,9 +12,9 @@
 
 [Back End Repository](https://github.com/trumanmiller20/Fuel_Fit_BE)
 
-[Entity Relationship Diagram](https://drive.google.com/file/d/1dc2QBlzhGx3we0ETleQ6cqfRoTofMX_z/view?usp=sharing)
+[Entity Relationship Diagram](https://app.diagrams.net/#G10JuUr0HBO2_VmeQ4AI-Wd8n1erfzEd3M)
 
-[Component Hierarchy Diagram](https://drive.google.com/file/d/1FLH9COKGH6CTPRAdueu4HAo-XghX1TdP/view?usp=sharing)
+[Component Hierarchy Diagram](https://app.diagrams.net/#G1gjkv6LMdYc1FffNoP9l3tso_d7Eon8MY)
 
 ---
 
@@ -32,7 +32,7 @@ This project represents an accumulation of knowledge built over 12 weeks and 420
 
 ### **_Description:_**
 
-This PERN stack application provides users with an intuitive platform from which they can calculate their personalized macronutrient needs based on their TDEE and plan their grocery shopping around those needs, promoting positive personal change and confidence.
+This PERN stack application provides users with an intuitive platform from which they can calculate their personalized macronutrient needs based on their Total Daily Energy Expenditure (TDEE) and plan their meals and grocery shopping around those needs, promoting positive personal change and confidence.
 
 ---
 
@@ -46,12 +46,20 @@ This PERN stack application provides users with an intuitive platform from which
 - Express.js
 - Node.js
 - PostgreSQL
+- Material UI
+- Google Fonts
+- Spoonacular API
 
 ---
 
 ### **_Future Updates_**
 
-1.
+1. Add Excercise Model
+2. Include exercise videos/gifs
+3. Exercise intensity/duration automatically adjusts TDEE
+4. Meal plan auto-populates suggested grocery list
+5. Calendar on dashboard to organize user data
+6. Data visualization on dashboard
 
 ---
 
@@ -64,4 +72,6 @@ This PERN stack application provides users with an intuitive platform from which
 - Google Fonts
 - LucidApp
 - draw.io
-- Pexels.com
+- Net Ninja YT Channel
+- EdRoh YT Channel
+- Healthline
