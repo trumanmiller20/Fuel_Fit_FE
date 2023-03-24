@@ -10,7 +10,7 @@
 4. Future Updates
 5. Credits
 
-[Back End Repository](https://github.com/trumanmiller20/Patient-Pathway-PERN-Backend)
+[Back End Repository](https://github.com/trumanmiller20/Fuel_Fit_BE)
 
 [Entity Relationship Diagram](https://drive.google.com/file/d/1dc2QBlzhGx3we0ETleQ6cqfRoTofMX_z/view?usp=sharing)
 
