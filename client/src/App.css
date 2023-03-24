@@ -69,7 +69,8 @@ body {
 
 .user-login {
   display: flex;
-  align-items: center;
+  /* align-items: center; */
+  margin: 25px;
   justify-content: center;
   height: 100vh;
 }
