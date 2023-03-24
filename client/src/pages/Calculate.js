@@ -219,9 +219,7 @@ const Calculate = ({
                 weight loss, the opposite being true for a positive daily
                 caloric difference. The rate and sustainability of these changes
                 is highly dependent on exercise (or changes in exercise habits),
-                and quality of macronutrients consumed. Read more{' '}
-                <Link>HERE</Link> to understand how to make your TDEE work for
-                you.
+                and quality of macronutrients consumed.
               </Typography>
             </AccordionDetails>
           </Accordion>
@@ -249,6 +247,38 @@ const Calculate = ({
                 <br />
                 (4) High activity: Activity that burns additional 650+ cal for
                 females or 800+ cal for males.
+              </Typography>
+            </AccordionDetails>
+          </Accordion>
+          <Accordion
+            className="macro-accordion"
+            style={{ backgroundColor: 'black', color: 'white' }}
+          >
+            <AccordionSummary
+              expandIcon={<ExpandMoreIcon />}
+              aria-controls="panel1a-content"
+              id="panel1a-header"
+            >
+              <Typography>Limitations of TDEE</Typography>
+            </AccordionSummary>
+            <AccordionDetails>
+              <Typography>
+                Those who are extremely lean may not find that the TDEE is as
+                useful a tool as it can be for others. It utilizes a body fat
+                approximation that would produce a lower than necessary TDEE.
+                Read more{' '}
+                <Link to="https://healthyeater.com/flexible-dieting-calculator">
+                  HERE
+                </Link>
+                .
+                <br />
+                Similarly those who are obese will not find the TDEE to be as
+                effective as others. Fat tissue isn't active tissue and requires
+                very little energy to maintain itself. Read more{' '}
+                <Link to="https://healthyeater.com/flexible-dieting-calculator">
+                  HERE
+                </Link>
+                .
               </Typography>
             </AccordionDetails>
           </Accordion>
