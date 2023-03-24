@@ -61,67 +61,69 @@ const Profile = ({ setUserProfile, userProfile, getUserDetails }) => {
     <div className="user-profile">
       <SideBar />
       <div className="user-profile-info">
-        <AccountCircle fontSize="large" />
-        <h1>Update Password</h1>
-        <form onSubmit={updateUserPassword}>
-          <div className="form-element">
-            <label className="element-label">Old Password:</label>
-            <input
-              className="element-input"
-              onChange={handleChange}
-              name="oldPassword"
-              type="password"
-              value={formValues.oldPassword}
-              required
-            />
-          </div>
-          <div className="form-element">
-            <label className="element-label">New Password:</label>
-            <input
-              className="element-input"
-              onChange={handleChange}
-              name="newPassword"
-              type="password"
-              value={formValues.newPassword}
-              required
-            />
-          </div>
-          <div className="form-element">
-            <label className="element-label">Confirm Password:</label>
-            <input
-              className="element-input"
-              onChange={handleChange}
-              name="confirmPassword"
-              type="password"
-              value={formValues.confirmPassword}
-              required
-            />
-          </div>
-          <div className="login-buttons">
-            <button className="button" onClick={() => logoutUser()}>
-              Logout
-            </button>
-            <button
-              className="button"
-              type="submit"
-              disabled={
-                (!formValues.newPassword &&
-                  !formValues.newPassword &&
-                  !formValues.confirmPassword) ||
-                formValues.newPassword !== formValues.confirmPassword
-              }
-            >
-              Update Password
-            </button>
-            <button
-              className="button"
-              id="delete-user"
-              onClick={() => deleteUser()}
-            >
-              Delete Account
-            </button>
-          </div>
-        </form>
+        <div className="user-profile-card">
+          <AccountCircle fontSize="large" />
+          <h1>Update Password</h1>
+          <form onSubmit={updateUserPassword}>
+            <div className="form-element">
+              <label className="element-label">Old Password:</label>
+              <input
+                className="element-input"
+                onChange={handleChange}
+                name="oldPassword"
+                type="password"
+                value={formValues.oldPassword}
+                required
+              />
+            </div>
+            <div className="form-element">
+              <label className="element-label">New Password:</label>
+              <input
+                className="element-input"
+                onChange={handleChange}
+                name="newPassword"
+                type="password"
+                value={formValues.newPassword}
+                required
+              />
+            </div>
+            <div className="form-element">
+              <label className="element-label">Confirm Password:</label>
+              <input
+                className="element-input"
+                onChange={handleChange}
+                name="confirmPassword"
+                type="password"
+                value={formValues.confirmPassword}
+                required
+              />
+            </div>
+            <div className="login-buttons">
+              <button className="button" onClick={() => logoutUser()}>
+                Logout
+              </button>
+              <button
+                className="button"
+                type="submit"
+                disabled={
+                  (!formValues.newPassword &&
+                    !formValues.newPassword &&
+                    !formValues.confirmPassword) ||
+                  formValues.newPassword !== formValues.confirmPassword
+                }
+              >
+                Update Password
+              </button>
+              <button
+                className="button"
+                id="delete-user"
+                onClick={() => deleteUser()}
+              >
+                Delete Account
+              </button>
+            </div>
+          </form>
+        </div>
       </div>
     </div>
   )

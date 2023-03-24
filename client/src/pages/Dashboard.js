@@ -48,7 +48,7 @@ const Dashboard = ({ getUserDetails, userProfile, user }) => {
             <h1>
               {userProfile?.firstName} {userProfile?.lastName}
             </h1>
-            <h5>*Navigate to Macros to update your info*</h5>
+            <h5>Navigate to Macros to update your info</h5>
             <br />
             <hr />
             <br />

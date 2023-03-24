@@ -108,9 +108,9 @@ const Calculate = ({
             </button>
           </div>
           {gender === 'male' ? (
-            <h5>*Calculator calibrated for male*</h5>
+            <h5>Calculator calibrated for male</h5>
           ) : (
-            <h5>*Calculator calibrated for female*</h5>
+            <h5>Calculator calibrated for female</h5>
           )}
           <div className="secondary-calc">
             <h2>Conversions</h2>
@@ -203,15 +203,25 @@ const Calculate = ({
               aria-controls="panel1a-content"
               id="panel1a-header"
             >
-              <Typography>What are macronutrients?</Typography>
+              <Typography>How to use my TDEE</Typography>
             </AccordionSummary>
             <AccordionDetails>
               <Typography>
-                Macronutrients, or macros, are essential nutrients the body
-                needs in large quantities to remain healthy. Macronutrients
-                provide the body with energy, help prevent disease, and allow
-                the body to function correctly. There are three main types of
-                macronutrients: proteins, fats, and carbohydrates.
+                1g protein = 4 calories
+                <br />
+                1g carbohydrate = 4 calories
+                <br />
+                1g fat = 9 calories
+                <br />
+                GENERALLY, an adult diet's macro split is about 45-65% carbs,
+                10-35% protein, and 20-35% fat. A negative daily caloric
+                difference ie: Caloric intake less than TDEE will assist in
+                weight loss, the opposite being true for a positive daily
+                caloric difference. The rate and sustainability of these changes
+                is highly dependent on exercise (or changes in exercise habits),
+                and quality of macronutrients consumed. Read more{' '}
+                <Link>HERE</Link> to understand how to make your TDEE work for
+                you.
               </Typography>
             </AccordionDetails>
           </Accordion>
@@ -224,15 +234,21 @@ const Calculate = ({
               aria-controls="panel2a-content"
               id="panel2a-header"
             >
-              <Typography>Why are macros important?</Typography>
+              <Typography>Healthy fats examples</Typography>
             </AccordionSummary>
             <AccordionDetails>
               <Typography>
-                Each individual is different in their macronutrient and caloric
-                needs. These needs are highly dependent upon myriad factors
-                including but not limited to: age, sex, height, weight, activity
-                level, etc. Deviating from this standard in excess or deficit
-                can cause unwanted weight gain or weight loss.
+                <ul>
+                  <li>Avocados</li>
+                  <li>Cheese</li>
+                  <li>Dark chocolate</li>
+                  <li>Whole eggs</li>
+                  <li>Fish</li>
+                  <li>Nuts</li>
+                  <li>Chia seeds</li>
+                  <li>Olive oil</li>
+                  <li>Full-fat yogurt</li>
+                </ul>
               </Typography>
             </AccordionDetails>
           </Accordion>
@@ -245,18 +261,23 @@ const Calculate = ({
               aria-controls="panel3a-content"
               id="panel3a-header"
             >
-              <Typography>What do TDEE and REE mean?</Typography>
+              <Typography>Healthy carbs examples</Typography>
             </AccordionSummary>
             <AccordionDetails>
               <Typography>
-                REE is an acronym for Resting Energy Expenditure. In a nutshell,
-                it represents the approximate number of calories your body will
-                burn when at rest ie: not moving, resting heart rate. When REE
-                is muliplied by a coefficient relating to your activity levels,
-                age, sex, height and weight, it produces the TDEE, or Total
-                Daily Energy Expenditure. TDEE acts as a reasonable
-                approximation of the number of calories your body needs to
-                maintain its current weight without a change in exercise habits.
+                <ul>
+                  <li>Quinoa</li>
+                  <li>Oats</li>
+                  <li>Buckwheat</li>
+                  <li>Bananas</li>
+                  <li>Sweet Potatoes</li>
+                  <li>Beets</li>
+                  <li>Oranges</li>
+                  <li>Blueberries</li>
+                  <li>Grapefruit</li>
+                  <li>Kidney Beans</li>
+                  <li>Chickpeas</li>
+                </ul>
               </Typography>
             </AccordionDetails>
           </Accordion>
@@ -269,17 +290,25 @@ const Calculate = ({
               aria-controls="panel3a-content"
               id="panel3a-header"
             >
-              <Typography>How reliable is TDEE?</Typography>
+              <Typography>Healthy protein examples</Typography>
             </AccordionSummary>
             <AccordionDetails>
               <Typography>
-                TDEE stands as a reasonable approximation. Planning caloric
-                intake based on TDEE can produce excellent results, but it is
-                not the most accurate tool available. In a clinical setting
-                there are a number of methods to more precisely determine
-                metabolic rate. One such example is the RQ or respiratory
-                quotient. Read more{' '}
-                <Link to="https://www.vacumed.com/293.html">HERE</Link>
+                <ul>
+                  <li>Eggs</li>
+                  <li>Almonds</li>
+                  <li>Chicken</li>
+                  <li>Cottage cheese</li>
+                  <li>Greek yogurt</li>
+                  <li>Milk</li>
+                  <li>Lentils</li>
+                  <li>Lean beef</li>
+                  <li>Fish</li>
+                  <li>Turkey</li>
+                  <li>Peanut butter</li>
+                  <li>Pea or whey protein powder</li>
+                  <li>Shellfish</li>
+                </ul>
               </Typography>
             </AccordionDetails>
           </Accordion>

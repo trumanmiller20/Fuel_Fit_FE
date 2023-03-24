@@ -18,7 +18,7 @@ const About = () => {
           <br />
           Our goal is to enable this positive change by educating you on your
           body's specific needs, enabling you to set realistic, long term,
-          life-altering goals.Our hope is to convey that this methodology is
+          life-altering goals. Our hope is to convey that this methodology is
           achievable without adopting severe eating practices.
           <br />
           <br />
