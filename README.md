@@ -75,3 +75,4 @@ This PERN stack application provides users with an intuitive platform from which
 - Net Ninja YT Channel
 - EdRoh YT Channel
 - Healthline
+- Healthy Eater (Ted Kallmyer)
