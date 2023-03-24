@@ -37,6 +37,7 @@ const RecipeList = ({ userProfile, user }) => {
   return (
     <div className="recipe-list">
       <h1>Recipes</h1>
+      <hr/>
         {userRecipes?.map((recipe) => (
           <div className="ind-rec-li" key={recipe.id}>
             <div className="user-rec-main">

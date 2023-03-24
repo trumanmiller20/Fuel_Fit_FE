@@ -158,23 +158,24 @@ body {
 
 .mission-statement {
   width: 80%;
-  margin: 25px;
+  margin: 40px;
   color: white;
   text-align: center;
   line-height: 1.5em;
-}
-
-.mission-statement p{
   background-color: black;
   padding: 15px;
   border-radius: 10px;
-  letter-spacing: 0.02em;
+}
+
+.mission-statement h3{
+  padding: 20px;
+  letter-spacing: 0.03em;
 }
 
 .mission-statement h1{
   padding: 15px;
   margin: 0;
-  color: black;
+  color: white;
 }
 
 .FAQ {
@@ -606,6 +607,10 @@ input {
   overflow: scroll;
 }
 
+.grocery-list hr{
+  width: 80%;
+}
+
 .ind-groc-li {
   display: flex;
   height: 50px;
@@ -654,7 +659,9 @@ input {
   overflow: scroll;
 }
 
-
+.recipe-list hr {
+  width: 80%;
+}
 
 .ind-rec-li {
   display: flex;

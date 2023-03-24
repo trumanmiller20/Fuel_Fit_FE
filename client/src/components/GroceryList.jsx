@@ -35,6 +35,7 @@ const GroceryList = ({ userProfile, user }) => {
   return (
     <div className="grocery-list">
       <h1>Grocery List</h1>
+      <hr/>
         {userGroceries?.map((grocery) => (
           <div className="ind-groc-li" key={grocery.id}>
             <img src={`https://spoonacular.com/cdn/ingredients_500x500/${grocery.image}`} />

@@ -6,7 +6,7 @@ const About = () => {
       <SideBar />
       <div className="mission-statement">
         <h1>About FUELfit</h1>
-        <p>
+        <h3>
           More than a nutrition tracking app, FUELfit represents the potential
           to fundamentally change your perspective on food.
           <br />
@@ -24,7 +24,7 @@ const About = () => {
           <br />
           "He who has health has hope and he who has hope has everything."
           <br />- Arabian Proverb
-        </p>
+        </h3>
       </div>
     </div>
   )
